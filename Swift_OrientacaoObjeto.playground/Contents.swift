@@ -173,3 +173,40 @@ if let customerCar = newCustomer.car {
     print(customerCar.name)
     print(customerCar.showDescription())
 }
+
+
+//MARK: STRUCTS
+
+var studant = User(name: "Levy", lastName: "Henrique", age: 23)
+var newStudent = studant
+
+print(studant.showFullName())
+
+studant.name = "Pedro"
+
+struct UserStruct {
+    var name : String
+    var lastName : String
+    
+    init(name: String, lastName: String){
+        self.name = name
+        self.lastName = lastName
+    }
+    
+    func showFullName() -> String {
+        return "\(self.name) \(self.lastName)"
+    }
+}
+
+
+var studantStruct = User(name: "Levy", lastName: "Henrique", age: 23)
+var newStudentStruct = studantStruct
+
+print(studantStruct.showFullName())
+
+newStudentStruct.name = "Pedro"
+
+print(studantStruct.showFullName())
+print(newStudentStruct.showFullName())
+
+
