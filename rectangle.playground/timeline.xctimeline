@@ -2,5 +2,10 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user195088/Desktop/Projects%20Curso%20BRQ/Git/OrientacaoObjetoSwift/rectangle.playground#CharacterRangeLen=175&amp;CharacterRangeLoc=471&amp;EndingColumnNumber=0&amp;EndingLineNumber=29&amp;StartingColumnNumber=0&amp;StartingLineNumber=25&amp;Timestamp=641581479.455301"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
