@@ -108,17 +108,6 @@ for vehicle in vehicles {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //MARK: NOVA CLASSE CARRO
 class Carro {
     
@@ -159,3 +148,28 @@ var porsche = Carro(marca: "Porsche", modelo: "Caynne", cor: "Amarelo", age: 202
 print(porsche.showCar())
 print(porsche.estaLigado())
 
+
+
+
+class Customer {
+    var name : String
+    var idade : Int
+    var car: Car?
+    
+    init(name: String, idade: Int) {
+        self.name = name
+        self.idade = idade
+    }
+    
+    
+    
+}
+
+var newCustomer = Customer(name: "Levy", idade: 23)
+newCustomer.car = uno
+
+// quando for retornar um valor nill, como foi o caso do Car? Para nao dar erro no unwrapp podemos utilizar o if let
+if let customerCar = newCustomer.car {
+    print(customerCar.name)
+    print(customerCar.showDescription())
+}
