@@ -46,10 +46,10 @@ class Vehicle {
     }
 }
 
-var vehicle = Vehicle(name: "Gol", brand: "Wolkswagen")
-vehicle.showDescription()
+var gol = Vehicle(name: "Gol", brand: "Wolkswagen")
+gol.showDescription()
 
-//MARK: HERDANDO DA CLASSE VEHICLE
+//MARK: CLASS CAR HERDANDO DE VEHICLE
 class Car : Vehicle {
     var isEletric: Bool
     var gears: Int
@@ -64,22 +64,46 @@ class Car : Vehicle {
     //MARK: sobrescrever o metodo showDescription() da classe Vehicle
     override func showDescription() -> String {
         //return super.showDescription() chama o metodo da classe pai, mas nao faz sentido dar override se nao for adicionar nada ao metodo
-        return "\(self.name) \(self.brand) has \(gears) gears. This car is eletric? \(isEletric ? "Yes" : "No")"
+        let eletric = isEletric ? "Yes" : "No"
+        return "\(self.name) \(self.brand) has \(gears) gears. This car is eletric? \(eletric)"
     }
 }
 
 var uno = Car(name: "Uno", brand: "Fiat", isEletric: false, gears: 4)
 print(uno.showDescription())
 
+//MARK: CLASS TRAIN HERNANDO DE VEHICLE
+
+class Train : Vehicle {
+    var numberOfPassangers : Int
+    
+    init(name: String, brand : String, numberOfPassangers : Int) {
+        self.numberOfPassangers = numberOfPassangers
+        super.init(name: name, brand: brand)
+    }
+    
+    override func showDescription() -> String {
+        return "This train has capacity for \(self.numberOfPassangers) people"
+    }
+}
+
+var train = Train(name: "Train", brand: "Odebretch", numberOfPassangers: 200)
+print(train.showDescription())
 
 
 
 
+//MARK: EXERCICIO DE FIXACAO DAS AULAS DO PROF ANDRE PAGANIN
+//Imagine um leilao aonde seram leiloados 3 veiculos, porem eu so tenho dinheiro para comprar os carros e nao o trem. Fiz uma logica para que eu conseguisse comprar apenas os carrosque extenderam da classe Vehicle
+var vehicles = [gol, uno, train]
 
-
-
-
-
+for vehicle in vehicles {
+    if vehicle is Car {
+        print("I want to buy: \(vehicle.name)")
+    }else{
+        print("I dont have money to buy: \(vehicle.name)")
+    }
+}
 
 
 
